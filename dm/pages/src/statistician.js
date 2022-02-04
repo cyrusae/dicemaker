@@ -1,4 +1,5 @@
 import { Chart } from "chart.js";
+import { rolls } from 'roller.js'
 
 export async function Statistician() {
 // how to await the results of the user entry?
@@ -12,7 +13,7 @@ export async function Statistician() {
 
 export async function Visualizer(results) {
  const labels = results[0];
- const data = results[1];
+ const data = rolls;
 
  new Chart("Results", {
   type: 'line',

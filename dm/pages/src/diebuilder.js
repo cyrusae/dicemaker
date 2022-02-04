@@ -12,7 +12,7 @@ export function Dropdown() {
  let list=[];
  for (i = 0; list.length < types.length; i++) {
   let thatDie = types[i];
-  let opt = '<option value="d' + thatDie + '">d' + thatDie + '</option>';
+  let opt = '<option value="' + i + '">d' + thatDie + '</option>';
   list.push(opt);
  }
  let options = list.join('');
