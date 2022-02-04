@@ -1,5 +1,5 @@
 import { Dropdown } from "./diebuilder"
-import { Add } from "../useDM"
+import { Add, Operator } from "../useDM"
 
 function Choice() {
  const chose = event => {
@@ -8,12 +8,31 @@ function Choice() {
 
  return (
   <form onSubmit={chose}>
-   <label htmlFor="firstNumber">Number:</label>
-   <input id="firstNumber" type="number" autoComplete="firstNumber" value="1"></input>
-   <label htmlFor="firstDice">Dice:</label>
+   <label htmlFor="number">Number:</label>
+   <input id="number" type="number" autoComplete="number" value="1"></input>
+   <label htmlFor="dice">Dice:</label>
    <Dropdown />
-   <Add />
+   <label htmlFor="modifier">Add modifier:</label>
+   <Operator />
+   <input id="modifier" type="number" autoComplete="modifier" value="0"></input>
   </form>
  )
 }
 
+export function Choices() {
+ return (
+  <>
+   <Choice />
+   <Add />
+  </>
+ )
+}
+
+export function Another() {
+ return (
+  <>
+   <Operator />
+   <Choices />
+  </>
+ )
+}
